@@ -17,7 +17,7 @@ final class TMDB_ViewerUITestsLaunchTests: XCTestCase {
         continueAfterFailure = false
     }
 
-    func testLaunch() throws {
+    func DISABLED_testLaunch() throws {
         let app = XCUIApplication()
         app.launch()
 

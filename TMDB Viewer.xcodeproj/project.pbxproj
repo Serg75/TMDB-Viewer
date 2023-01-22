@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		952A47D7297946F300A52281 /* TMDB_ViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47D6297946F300A52281 /* TMDB_ViewerApp.swift */; };
-		952A47D9297946F300A52281 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47D8297946F300A52281 /* ContentView.swift */; };
+		952A47D9297946F300A52281 /* GenreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47D8297946F300A52281 /* GenreListView.swift */; };
 		952A47DB297946F400A52281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 952A47DA297946F400A52281 /* Assets.xcassets */; };
 		952A47DE297946F400A52281 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 952A47DD297946F400A52281 /* Preview Assets.xcassets */; };
 		952A47E8297946F500A52281 /* TMDB_ViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47E7297946F500A52281 /* TMDB_ViewerTests.swift */; };
 		952A47F2297946F500A52281 /* TMDB_ViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47F1297946F500A52281 /* TMDB_ViewerUITests.swift */; };
 		952A47F4297946F500A52281 /* TMDB_ViewerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47F3297946F500A52281 /* TMDB_ViewerUITestsLaunchTests.swift */; };
+		952A48042979481600A52281 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A48032979481600A52281 /* Genre.swift */; };
+		952A4807297949CE00A52281 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A4806297949CE00A52281 /* NetworkRequest.swift */; };
+		952A480B29794AF000A52281 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A480A29794AF000A52281 /* APIRequest.swift */; };
+		952A480D29794B2500A52281 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A480C29794B2500A52281 /* APIResource.swift */; };
+		952A48112979683A00A52281 /* GenreListResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A48102979683A00A52281 /* GenreListResource.swift */; };
+		952A48132979792900A52281 /* GenreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A48122979792900A52281 /* GenreListViewModel.swift */; };
+		952A4818297D54D000A52281 /* NetworkMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A4816297D3C7E00A52281 /* NetworkMocks.swift */; };
+		952A481A297D5D5900A52281 /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A4819297D5D5900A52281 /* NetworkRequestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +44,22 @@
 /* Begin PBXFileReference section */
 		952A47D3297946F300A52281 /* TMDB Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TMDB Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		952A47D6297946F300A52281 /* TMDB_ViewerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_ViewerApp.swift; sourceTree = "<group>"; };
-		952A47D8297946F300A52281 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		952A47D8297946F300A52281 /* GenreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreListView.swift; sourceTree = "<group>"; };
 		952A47DA297946F400A52281 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		952A47DD297946F400A52281 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		952A47E3297946F500A52281 /* TMDB ViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB ViewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		952A47E3297946F500A52281 /* TMDB Viewer Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB Viewer Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		952A47E7297946F500A52281 /* TMDB_ViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_ViewerTests.swift; sourceTree = "<group>"; };
-		952A47ED297946F500A52281 /* TMDB ViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB ViewerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		952A47ED297946F500A52281 /* TMDB Viewer UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB Viewer UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		952A47F1297946F500A52281 /* TMDB_ViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_ViewerUITests.swift; sourceTree = "<group>"; };
 		952A47F3297946F500A52281 /* TMDB_ViewerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_ViewerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		952A48032979481600A52281 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		952A4806297949CE00A52281 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		952A480A29794AF000A52281 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		952A480C29794B2500A52281 /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
+		952A48102979683A00A52281 /* GenreListResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreListResource.swift; sourceTree = "<group>"; };
+		952A48122979792900A52281 /* GenreListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreListViewModel.swift; sourceTree = "<group>"; };
+		952A4816297D3C7E00A52281 /* NetworkMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMocks.swift; sourceTree = "<group>"; };
+		952A4819297D5D5900A52281 /* NetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				952A47D5297946F300A52281 /* TMDB Viewer */,
-				952A47E6297946F500A52281 /* TMDB ViewerTests */,
-				952A47F0297946F500A52281 /* TMDB ViewerUITests */,
+				952A47E6297946F500A52281 /* TMDB Viewer Tests */,
+				952A47F0297946F500A52281 /* TMDB Viewer UITests */,
 				952A47D4297946F300A52281 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,8 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				952A47D3297946F300A52281 /* TMDB Viewer.app */,
-				952A47E3297946F500A52281 /* TMDB ViewerTests.xctest */,
-				952A47ED297946F500A52281 /* TMDB ViewerUITests.xctest */,
+				952A47E3297946F500A52281 /* TMDB Viewer Tests.xctest */,
+				952A47ED297946F500A52281 /* TMDB Viewer UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,8 +110,11 @@
 		952A47D5297946F300A52281 /* TMDB Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				952A48002979474000A52281 /* Model */,
+				952A48012979474E00A52281 /* View */,
+				952A48022979475800A52281 /* ViewModel */,
+				952A48052979498900A52281 /* Network */,
 				952A47D6297946F300A52281 /* TMDB_ViewerApp.swift */,
-				952A47D8297946F300A52281 /* ContentView.swift */,
 				952A47DA297946F400A52281 /* Assets.xcassets */,
 				952A47DC297946F400A52281 /* Preview Content */,
 			);
@@ -110,21 +129,66 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		952A47E6297946F500A52281 /* TMDB ViewerTests */ = {
+		952A47E6297946F500A52281 /* TMDB Viewer Tests */ = {
 			isa = PBXGroup;
 			children = (
+				952A4815297D3C3300A52281 /* Network */,
 				952A47E7297946F500A52281 /* TMDB_ViewerTests.swift */,
 			);
-			path = "TMDB ViewerTests";
+			path = "TMDB Viewer Tests";
 			sourceTree = "<group>";
 		};
-		952A47F0297946F500A52281 /* TMDB ViewerUITests */ = {
+		952A47F0297946F500A52281 /* TMDB Viewer UITests */ = {
 			isa = PBXGroup;
 			children = (
 				952A47F1297946F500A52281 /* TMDB_ViewerUITests.swift */,
 				952A47F3297946F500A52281 /* TMDB_ViewerUITestsLaunchTests.swift */,
 			);
-			path = "TMDB ViewerUITests";
+			path = "TMDB Viewer UITests";
+			sourceTree = "<group>";
+		};
+		952A48002979474000A52281 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				952A48032979481600A52281 /* Genre.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		952A48012979474E00A52281 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				952A47D8297946F300A52281 /* GenreListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		952A48022979475800A52281 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				952A48122979792900A52281 /* GenreListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		952A48052979498900A52281 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				952A4806297949CE00A52281 /* NetworkRequest.swift */,
+				952A480A29794AF000A52281 /* APIRequest.swift */,
+				952A480C29794B2500A52281 /* APIResource.swift */,
+				952A48102979683A00A52281 /* GenreListResource.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		952A4815297D3C3300A52281 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				952A4816297D3C7E00A52281 /* NetworkMocks.swift */,
+				952A4819297D5D5900A52281 /* NetworkRequestTests.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +211,9 @@
 			productReference = 952A47D3297946F300A52281 /* TMDB Viewer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		952A47E2297946F500A52281 /* TMDB ViewerTests */ = {
+		952A47E2297946F500A52281 /* TMDB Viewer Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 952A47FA297946F500A52281 /* Build configuration list for PBXNativeTarget "TMDB ViewerTests" */;
+			buildConfigurationList = 952A47FA297946F500A52281 /* Build configuration list for PBXNativeTarget "TMDB Viewer Tests" */;
 			buildPhases = (
 				952A47DF297946F500A52281 /* Sources */,
 				952A47E0297946F500A52281 /* Frameworks */,
@@ -160,14 +224,14 @@
 			dependencies = (
 				952A47E5297946F500A52281 /* PBXTargetDependency */,
 			);
-			name = "TMDB ViewerTests";
+			name = "TMDB Viewer Tests";
 			productName = "TMDB ViewerTests";
-			productReference = 952A47E3297946F500A52281 /* TMDB ViewerTests.xctest */;
+			productReference = 952A47E3297946F500A52281 /* TMDB Viewer Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		952A47EC297946F500A52281 /* TMDB ViewerUITests */ = {
+		952A47EC297946F500A52281 /* TMDB Viewer UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 952A47FD297946F500A52281 /* Build configuration list for PBXNativeTarget "TMDB ViewerUITests" */;
+			buildConfigurationList = 952A47FD297946F500A52281 /* Build configuration list for PBXNativeTarget "TMDB Viewer UITests" */;
 			buildPhases = (
 				952A47E9297946F500A52281 /* Sources */,
 				952A47EA297946F500A52281 /* Frameworks */,
@@ -178,9 +242,9 @@
 			dependencies = (
 				952A47EF297946F500A52281 /* PBXTargetDependency */,
 			);
-			name = "TMDB ViewerUITests";
+			name = "TMDB Viewer UITests";
 			productName = "TMDB ViewerUITests";
-			productReference = 952A47ED297946F500A52281 /* TMDB ViewerUITests.xctest */;
+			productReference = 952A47ED297946F500A52281 /* TMDB Viewer UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -220,8 +284,8 @@
 			projectRoot = "";
 			targets = (
 				952A47D2297946F300A52281 /* TMDB Viewer */,
-				952A47E2297946F500A52281 /* TMDB ViewerTests */,
-				952A47EC297946F500A52281 /* TMDB ViewerUITests */,
+				952A47E2297946F500A52281 /* TMDB Viewer Tests */,
+				952A47EC297946F500A52281 /* TMDB Viewer UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,7 +321,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				952A47D9297946F300A52281 /* ContentView.swift in Sources */,
+				952A48132979792900A52281 /* GenreListViewModel.swift in Sources */,
+				952A48042979481600A52281 /* Genre.swift in Sources */,
+				952A47D9297946F300A52281 /* GenreListView.swift in Sources */,
+				952A48112979683A00A52281 /* GenreListResource.swift in Sources */,
+				952A4807297949CE00A52281 /* NetworkRequest.swift in Sources */,
+				952A480D29794B2500A52281 /* APIResource.swift in Sources */,
+				952A480B29794AF000A52281 /* APIRequest.swift in Sources */,
 				952A47D7297946F300A52281 /* TMDB_ViewerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +336,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952A4818297D54D000A52281 /* NetworkMocks.swift in Sources */,
 				952A47E8297946F500A52281 /* TMDB_ViewerTests.swift in Sources */,
+				952A481A297D5D5900A52281 /* NetworkRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +636,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		952A47FA297946F500A52281 /* Build configuration list for PBXNativeTarget "TMDB ViewerTests" */ = {
+		952A47FA297946F500A52281 /* Build configuration list for PBXNativeTarget "TMDB Viewer Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				952A47FB297946F500A52281 /* Debug */,
@@ -573,7 +645,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		952A47FD297946F500A52281 /* Build configuration list for PBXNativeTarget "TMDB ViewerUITests" */ = {
+		952A47FD297946F500A52281 /* Build configuration list for PBXNativeTarget "TMDB Viewer UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				952A47FE297946F500A52281 /* Debug */,

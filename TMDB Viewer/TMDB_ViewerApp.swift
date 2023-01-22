@@ -11,7 +11,7 @@ import SwiftUI
 struct TMDB_ViewerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GenreListView()
         }
     }
 }
