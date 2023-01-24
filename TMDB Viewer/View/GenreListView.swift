@@ -11,13 +11,19 @@ struct GenreListView: View {
     @StateObject private var viewModel = GenreListViewModel()
     
     var body: some View {
-	    List(viewModel.genres) { genre in
-    	    Text(genre.name ?? "Unknown")
-	    }
-	    .navigationTitle("Tmdb")
-	    .onAppear {
-    	    viewModel.fetchGenres()
-	    }
+        NavigationView {
+            List(viewModel.genres) { genre in
+                NavigationLink(destination: MovieListView(genre: genre)) {
+                    VStack {
+                        Text(genre.name ?? "Unknown")
+                    }
+                }
+            }
+            .navigationTitle("Tmdb")
+            .onAppear {
+                viewModel.fetchGenres()
+            }
+        }
     }
 }
 

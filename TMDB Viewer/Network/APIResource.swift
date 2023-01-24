@@ -23,6 +23,9 @@ protocol APIResource {
     
     /// URL method like '/genre/movie/list'
     var methodPath: String { get }
+    
+    /// Additional data
+    var extraData: [String: String]? { get }
 }
 
 extension APIResource {
@@ -33,6 +36,13 @@ extension APIResource {
     	    URLQueryItem(name: "api_key", value: API_KEY),
     	    URLQueryItem(name: "language", value: LANGUAGE)
 	    ]
+        if let extraData = extraData {
+            for item in extraData {
+                components.queryItems?.append(URLQueryItem(name: item.key, value: item.value))
+            }
+        }
 	    return components.url!
     }
+    
+    var extraData: [String: String]? { nil }
 }
