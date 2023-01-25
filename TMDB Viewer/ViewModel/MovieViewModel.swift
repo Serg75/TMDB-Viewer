@@ -7,22 +7,25 @@
 
 import Foundation
 import SwiftUI
-import UIKit
 
 class MovieViewModel: ObservableObject, Identifiable, Hashable {
+    private let movie: Movie?
     let uuid = UUID()
     let id: Int
-    private let movie: Movie?
     let title: String
-    private let imageURL: URL?
-    @Published private(set) var image: UIImage?
+    let imageURL: URL?
     
     init(movie: Movie?) {
-        self.id = movie?.id ?? 0
         self.movie = movie
-        self.title = movie?.title ?? "No title"
-        self.imageURL = movie?.imageURL
-        self.image = nil
+        if let movie = movie {
+            self.id = movie.id
+            self.title = movie.title ?? "No title"
+            self.imageURL = ImageResource(namePart: movie.imageURL ?? "", resolution: .w200).url
+        } else {
+            self.id = 0
+            self.title = "No title"
+            self.imageURL = nil
+        }
     }
     
     static func == (lhs: MovieViewModel, rhs: MovieViewModel) -> Bool {

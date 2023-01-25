@@ -25,8 +25,7 @@ struct MovieList: Decodable {
 struct Movie: Decodable, Identifiable {
     let id: Int
     let title: String?
-    let imageURL: URL?
-    var image: UIImage?
+    let imageURL: String?
     
     enum CodingKeys: String, CodingKey {
         case id

@@ -30,6 +30,8 @@
 		952A481E297DECFA00A52281 /* MovieListResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A481D297DECFA00A52281 /* MovieListResource.swift */; };
 		952A4820297E5E2400A52281 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A481F297E5E2400A52281 /* Movie.swift */; };
 		952A4822297E8E4100A52281 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A4821297E8E4100A52281 /* MovieListView.swift */; };
+		95BECE4129817D1000A9CAED /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 95BECE4029817D1000A9CAED /* Kingfisher */; };
+		95BECE4329817FBE00A9CAED /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BECE4229817FBE00A9CAED /* ImageResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 		952A481D297DECFA00A52281 /* MovieListResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListResource.swift; sourceTree = "<group>"; };
 		952A481F297E5E2400A52281 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		952A4821297E8E4100A52281 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
+		95BECE4229817FBE00A9CAED /* ImageResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BECE4129817D1000A9CAED /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +206,7 @@
 				952A480C29794B2500A52281 /* APIResource.swift */,
 				952A48102979683A00A52281 /* GenreListResource.swift */,
 				952A481D297DECFA00A52281 /* MovieListResource.swift */,
+				95BECE4229817FBE00A9CAED /* ImageResource.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -231,6 +236,9 @@
 			dependencies = (
 			);
 			name = "TMDB Viewer";
+			packageProductDependencies = (
+				95BECE4029817D1000A9CAED /* Kingfisher */,
+			);
 			productName = "TMDB Viewer";
 			productReference = 952A47D3297946F300A52281 /* TMDB Viewer.app */;
 			productType = "com.apple.product-type.application";
@@ -303,6 +311,9 @@
 				Base,
 			);
 			mainGroup = 952A47CA297946F300A52281;
+			packageReferences = (
+				95BECE3F29817D1000A9CAED /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 952A47D4297946F300A52281 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -355,6 +366,7 @@
 				952A4822297E8E4100A52281 /* MovieListView.swift in Sources */,
 				952A481C297DEB3F00A52281 /* MovieListViewModel.swift in Sources */,
 				952A4807297949CE00A52281 /* NetworkRequest.swift in Sources */,
+				95BECE4329817FBE00A9CAED /* ImageResource.swift in Sources */,
 				952A480D29794B2500A52281 /* APIResource.swift in Sources */,
 				950BFCBC297F3B8800CAF004 /* MovieView.swift in Sources */,
 				952A480B29794AF000A52281 /* APIRequest.swift in Sources */,
@@ -687,6 +699,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95BECE3F29817D1000A9CAED /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95BECE4029817D1000A9CAED /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95BECE3F29817D1000A9CAED /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 952A47CB297946F300A52281 /* Project object */;
 }

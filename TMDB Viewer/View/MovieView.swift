@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MovieView: View {
     @StateObject private var viewModel: MovieViewModel
@@ -14,18 +15,19 @@ struct MovieView: View {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
-    private var image: Image {
-        guard let posterImage = viewModel.image else {
-            return Image(systemName: "questionmark.circle")
-        }
-        return Image(uiImage: posterImage)
-    }
-
     var body: some View {
         HStack(spacing: 16.0) {
-            image
+            KFImage(viewModel.imageURL)
+                .placeholder {
+                    SwiftUI.Image("movie-placeholder")
+                        .resizable()
+                        .scaledToFill()
+                }
                 .resizable()
-                .frame(width: 36.0, height: 36.0)
+                .cancelOnDisappear(true)
+                .frame(width: 40.0, height: 40.0)
+                .clipped()
+            
             Text(viewModel.title)
         }
         .padding(.vertical, 8.0)
