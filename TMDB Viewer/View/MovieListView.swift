@@ -18,16 +18,20 @@ struct MovieListView: View {
     }
     
     var body: some View {
-        ScrollView(.vertical) {
-            VStack {
-                if viewModel.isLoading {
-                    ProgressView()
-                        .frame(maxWidth: .infinity, alignment: .center)
-                } else {
-                    VStack(alignment: .leading) {
-                        ForEach(viewModel.movies) { movie in
+        ScrollView(.vertical, showsIndicators: true) {
+            Section(footer: footer()) {
+                VStack {
+                    LazyVStack(alignment: .leading) {
+                        ForEach(Array(viewModel.movies.enumerated()), id: \.offset) { index, movie in
                             HStack {
                                 MovieView(viewModel: movie)
+                                    .onAppear {
+                                        if !viewModel.isEnd {
+                                            DispatchQueue.global(qos: .userInitiated).async {
+                                                viewModel.prepareMovie(index: index)
+                                            }
+                                        }
+                                    }
                             }
                         }
                     }
@@ -40,8 +44,15 @@ struct MovieListView: View {
             }
         }
         .navigationTitle(genre.name ?? "Unknown")
-        .onAppear {
-            viewModel.fetchMovies()
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    @ViewBuilder
+    func footer() -> some View {
+        if viewModel.isEnd {
+            Text("End")
+        } else {
+            ProgressView()
         }
     }
 }
