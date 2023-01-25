@@ -11,7 +11,7 @@ struct GenreList: Decodable {
     let genres: [Genre]
 }
 
-struct Genre: Decodable, Identifiable {
+struct Genre: Codable, Identifiable {
     let id: Int
     let name: String?
 }
