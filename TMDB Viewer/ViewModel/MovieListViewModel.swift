@@ -17,10 +17,14 @@ class MovieListViewModel: ObservableObject {
     @Published private(set) var isEnd = false
     private var isLoading = false
 
-    private var request: APIRequest<MovieListResource>?
-    
-    init(genre: Genre) {
+    private let request: (any APIRequestProtocol<MovieListResource>)!
+
+    init(
+        genre: Genre,
+        request: any APIRequestProtocol<MovieListResource> = APIRequest(resource: MovieListResource())
+    ) {
 	    self.genre = genre
+        self.request = request
         self.fetchMovies()
     }
     
@@ -28,11 +32,9 @@ class MovieListViewModel: ObservableObject {
         guard !isLoading else { return }
         
         isLoading = true
-        let resource = MovieListResource(genre: genre, page: page)
-        let request = APIRequest(resource: resource)
-        self.request = request
+        request.resource = MovieListResource(genre: genre, page: page)
         request.execute { [weak self] movieList in
-            if let self = self, let movieList = movieList {
+            if let self = self, let movieList = movieList as? MovieList {
                 self.isEnd = movieList.page >= movieList.pageCount
                 let from = self.movieModels.count
                 self.movieModels.append(contentsOf: movieList.movies)

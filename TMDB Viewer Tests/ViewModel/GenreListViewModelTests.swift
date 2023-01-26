@@ -5,8 +5,6 @@
 //  Created by Sergey Slobodenyuk on 2023-01-26.
 //
 
-import Foundation
-
 import XCTest
 @testable import TMDB_Viewer
 
@@ -23,8 +21,10 @@ final class GenreListViewModelTests: XCTestCase {
         }
     }
     
-    class SimpleAPIRequestMock: APIRequestProtocol {
-        let resource: GenreListResource
+    class EmptyAPIRequestMock: APIRequestProtocol {
+        typealias Resource = GenreListResource
+        
+        var resource: GenreListResource
         let session: URLSessionProtocol
         
         init() {
@@ -42,7 +42,7 @@ final class GenreListViewModelTests: XCTestCase {
     
     func test_InitialState_WithEmptyCollection() {
         
-        let sut = GenreListViewModel(request: SimpleAPIRequestMock())
+        let sut = GenreListViewModel(request: EmptyAPIRequestMock())
         
         XCTAssertEqual(sut.genres.count, 0)
     }
@@ -50,7 +50,9 @@ final class GenreListViewModelTests: XCTestCase {
     func test_FetchGenres_PopulatesCollection() {
         
         class APIRequestMock: APIRequestProtocol {
-            let resource: GenreListResource
+            typealias Resource = GenreListResource
+            
+            var resource: GenreListResource
             let session: URLSessionProtocol
             
             init() {
@@ -77,8 +79,9 @@ final class GenreListViewModelTests: XCTestCase {
     func test_FetchGenres_WhenNoInternet_EmptyCollection() {
         
         class APIRequestMock: APIRequestProtocol {
+            typealias Resource = GenreListResource
             
-            let resource: GenreListResource
+            var resource: GenreListResource
             let session: URLSessionProtocol
             let expectation: XCTestExpectation
             
@@ -110,7 +113,9 @@ final class GenreListViewModelTests: XCTestCase {
     func test_FetchGenres_SavesCache() {
         
         class APIRequestMock: APIRequestProtocol {
-            let resource: GenreListResource
+            typealias Resource = GenreListResource
+            
+            var resource: GenreListResource
             let session: URLSessionProtocol
             
             init() {
@@ -143,7 +148,7 @@ final class GenreListViewModelTests: XCTestCase {
     func test_SaveCache_SavesProperDate() {
         
         let defaults = UserDefaults(suiteName: "test")!
-        let sut = GenreListViewModel(request: SimpleAPIRequestMock(), defaults: defaults)
+        let sut = GenreListViewModel(request: EmptyAPIRequestMock(), defaults: defaults)
         
         sut.saveToCache(tenGenres)
         
@@ -159,7 +164,7 @@ final class GenreListViewModelTests: XCTestCase {
     func test_LoadCache_ReturnsSameDataAsSaveCache() {
         
         let defaults = UserDefaults(suiteName: "test")!
-        let sut = GenreListViewModel(request: SimpleAPIRequestMock(), defaults: defaults)
+        let sut = GenreListViewModel(request: EmptyAPIRequestMock(), defaults: defaults)
         
         sut.saveToCache(tenGenres)
         
@@ -171,7 +176,7 @@ final class GenreListViewModelTests: XCTestCase {
     func test_ClearOldCacheData_IfDeleteAll_ClearsCache() {
         
         let defaults = UserDefaults(suiteName: "test")!
-        let sut = GenreListViewModel(request: SimpleAPIRequestMock(), defaults: defaults)
+        let sut = GenreListViewModel(request: EmptyAPIRequestMock(), defaults: defaults)
         
         sut.saveToCache(tenGenres)
         
@@ -184,7 +189,7 @@ final class GenreListViewModelTests: XCTestCase {
     func test_ClearOldCacheData_IfNoDateInCache_ClearsCache() {
         
         let defaults = UserDefaults(suiteName: "test")!
-        let sut = GenreListViewModel(request: SimpleAPIRequestMock(), defaults: defaults)
+        let sut = GenreListViewModel(request: EmptyAPIRequestMock(), defaults: defaults)
         
         sut.saveToCache(tenGenres)
         defaults.removeObject(forKey: "genres-date")
@@ -198,7 +203,7 @@ final class GenreListViewModelTests: XCTestCase {
     func test_ClearOldCacheData_IfOldData_ClearsCache() {
         
         let defaults = UserDefaults(suiteName: "test")!
-        let sut = GenreListViewModel(request: SimpleAPIRequestMock(), defaults: defaults)
+        let sut = GenreListViewModel(request: EmptyAPIRequestMock(), defaults: defaults)
         
         sut.saveToCache(tenGenres)
         // set date older than 24h and 10 sec

@@ -11,14 +11,14 @@ import Foundation
 protocol APIRequestProtocol<Resource>: NetworkRequest {
     associatedtype Resource: APIResource
     
-    var resource: Resource { get }
+    var resource: Resource { get set }
 }
 
 /// REST API requests concrete class
 class APIRequest<Resource: APIResource>: APIRequestProtocol {
 
     let session: URLSessionProtocol
-    let resource: Resource
+    var resource: Resource
     
     init(resource: Resource, session: URLSessionProtocol = URLSession.shared) {
         self.session = session

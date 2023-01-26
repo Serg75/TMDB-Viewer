@@ -35,6 +35,7 @@
 		95BECE4629829FD400A9CAED /* GenreListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BECE4529829FD400A9CAED /* GenreListViewModelTests.swift */; };
 		95BECE482982D59F00A9CAED /* AppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BECE472982D59F00A9CAED /* AppLauncher.swift */; };
 		95BECE4A2982D5CF00A9CAED /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BECE492982D5CF00A9CAED /* TestApp.swift */; };
+		95BECE4C2983332100A9CAED /* MovieListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BECE4B2983332100A9CAED /* MovieListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		95BECE4529829FD400A9CAED /* GenreListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreListViewModelTests.swift; sourceTree = "<group>"; };
 		95BECE472982D59F00A9CAED /* AppLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauncher.swift; sourceTree = "<group>"; };
 		95BECE492982D5CF00A9CAED /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
+		95BECE4B2983332100A9CAED /* MovieListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				95BECE4529829FD400A9CAED /* GenreListViewModelTests.swift */,
+				95BECE4B2983332100A9CAED /* MovieListViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				95BECE4629829FD400A9CAED /* GenreListViewModelTests.swift in Sources */,
 				952A4818297D54D000A52281 /* NetworkMocks.swift in Sources */,
 				952A47E8297946F500A52281 /* TMDB_ViewerTests.swift in Sources */,
+				95BECE4C2983332100A9CAED /* MovieListViewModelTests.swift in Sources */,
 				952A481A297D5D5900A52281 /* NetworkRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
