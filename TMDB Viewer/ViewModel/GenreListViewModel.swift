@@ -16,10 +16,16 @@ class GenreListViewModel: ObservableObject {
     @Published private(set) var genres: [Genre] = []
     @Published private(set) var isLoading = false
     
-    private var request: APIRequest<GenreListResource>?
+    private var request: (any APIRequestProtocol<GenreListResource>)!
     
-    func fetchGenres() {
-        clearOldCacheData()
+    init(request: any APIRequestProtocol<GenreListResource> = APIRequest(resource: GenreListResource())) {
+        self.request = request
+    }
+    
+    func fetchGenres(clearCache: Bool = false) {
+        
+        clearOldCacheData(deleteAll: clearCache)
+        
         if let genres = loadFromCache() {
             self.genres = genres
             return
@@ -28,12 +34,9 @@ class GenreListViewModel: ObservableObject {
 	    guard !isLoading else { return }
         
 	    isLoading = true
-	    let resource = GenreListResource()
-	    let request = APIRequest(resource: resource)
-	    self.request = request
 	    request.execute { [weak self] genreList in
             if let self = self {
-                self.genres = genreList?.genres ?? []
+                self.genres = (genreList as? GenreList)?.genres ?? []
                 self.isLoading = false
                 self.saveToCache(self.genres)
             }
@@ -57,11 +60,11 @@ class GenreListViewModel: ObservableObject {
         return try? jsonDecoder.decode([Genre].self, from: data)
     }
         
-    func clearOldCacheData() {
+    func clearOldCacheData(deleteAll: Bool) {
         let defaults = UserDefaults.standard
         guard let savedDate = defaults.object(forKey: DATE_KEY) as? Date else { return }
 
-        if DateInterval(start: savedDate, end: Date()).duration > RETENTION_TIME {
+        if deleteAll || DateInterval(start: savedDate, end: Date()).duration > RETENTION_TIME {
             defaults.removeObject(forKey: GENRES_KEY)
             defaults.removeObject(forKey: DATE_KEY)
         }

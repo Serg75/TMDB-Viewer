@@ -8,10 +8,16 @@
 import Foundation
 
 /// REST API requests
-class APIRequest<Resource: APIResource> {
+protocol APIRequestProtocol<Resource>: NetworkRequest {
+    associatedtype Resource: APIResource
+    
+    var resource: Resource { get }
+}
+
+/// REST API requests concrete class
+class APIRequest<Resource: APIResource>: APIRequestProtocol {
 
     let session: URLSessionProtocol
-
     let resource: Resource
     
     init(resource: Resource, session: URLSessionProtocol = URLSession.shared) {

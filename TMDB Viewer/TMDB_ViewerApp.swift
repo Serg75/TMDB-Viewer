@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@main
 struct TMDB_ViewerApp: App {
     var body: some Scene {
         WindowGroup {

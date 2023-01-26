@@ -32,6 +32,9 @@
 		952A4822297E8E4100A52281 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A4821297E8E4100A52281 /* MovieListView.swift */; };
 		95BECE4129817D1000A9CAED /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 95BECE4029817D1000A9CAED /* Kingfisher */; };
 		95BECE4329817FBE00A9CAED /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BECE4229817FBE00A9CAED /* ImageResource.swift */; };
+		95BECE4629829FD400A9CAED /* GenreListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BECE4529829FD400A9CAED /* GenreListViewModelTests.swift */; };
+		95BECE482982D59F00A9CAED /* AppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BECE472982D59F00A9CAED /* AppLauncher.swift */; };
+		95BECE4A2982D5CF00A9CAED /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BECE492982D5CF00A9CAED /* TestApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		952A481F297E5E2400A52281 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		952A4821297E8E4100A52281 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		95BECE4229817FBE00A9CAED /* ImageResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResource.swift; sourceTree = "<group>"; };
+		95BECE4529829FD400A9CAED /* GenreListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreListViewModelTests.swift; sourceTree = "<group>"; };
+		95BECE472982D59F00A9CAED /* AppLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauncher.swift; sourceTree = "<group>"; };
+		95BECE492982D5CF00A9CAED /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +140,9 @@
 				952A48012979474E00A52281 /* View */,
 				952A48022979475800A52281 /* ViewModel */,
 				952A48052979498900A52281 /* Network */,
+				95BECE472982D59F00A9CAED /* AppLauncher.swift */,
 				952A47D6297946F300A52281 /* TMDB_ViewerApp.swift */,
+				95BECE492982D5CF00A9CAED /* TestApp.swift */,
 				952A47DA297946F400A52281 /* Assets.xcassets */,
 				952A47DC297946F400A52281 /* Preview Content */,
 			);
@@ -154,6 +162,7 @@
 		952A47E6297946F500A52281 /* TMDB Viewer Tests */ = {
 			isa = PBXGroup;
 			children = (
+				95BECE4429829F5F00A9CAED /* ViewModel */,
 				952A4815297D3C3300A52281 /* Network */,
 				952A47E7297946F500A52281 /* TMDB_ViewerTests.swift */,
 			);
@@ -218,6 +227,14 @@
 				952A4819297D5D5900A52281 /* NetworkRequestTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		95BECE4429829F5F00A9CAED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				95BECE4529829FD400A9CAED /* GenreListViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +377,7 @@
 				952A48132979792900A52281 /* GenreListViewModel.swift in Sources */,
 				952A48042979481600A52281 /* Genre.swift in Sources */,
 				952A481E297DECFA00A52281 /* MovieListResource.swift in Sources */,
+				95BECE482982D59F00A9CAED /* AppLauncher.swift in Sources */,
 				952A47D9297946F300A52281 /* GenreListView.swift in Sources */,
 				952A48112979683A00A52281 /* GenreListResource.swift in Sources */,
 				950BFCC0297FAA1200CAF004 /* PreviewData.swift in Sources */,
@@ -373,6 +391,7 @@
 				950BFCBA297F318700CAF004 /* MovieViewModel.swift in Sources */,
 				952A4820297E5E2400A52281 /* Movie.swift in Sources */,
 				952A47D7297946F300A52281 /* TMDB_ViewerApp.swift in Sources */,
+				95BECE4A2982D5CF00A9CAED /* TestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BECE4629829FD400A9CAED /* GenreListViewModelTests.swift in Sources */,
 				952A4818297D54D000A52281 /* NetworkMocks.swift in Sources */,
 				952A47E8297946F500A52281 /* TMDB_ViewerTests.swift in Sources */,
 				952A481A297D5D5900A52281 /* NetworkRequestTests.swift in Sources */,
