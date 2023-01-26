@@ -16,10 +16,15 @@ class GenreListViewModel: ObservableObject {
     @Published private(set) var genres: [Genre] = []
     @Published private(set) var isLoading = false
     
-    private var request: (any APIRequestProtocol<GenreListResource>)!
+    private let request: (any APIRequestProtocol<GenreListResource>)!
+    private let defaults: UserDefaults
     
-    init(request: any APIRequestProtocol<GenreListResource> = APIRequest(resource: GenreListResource())) {
+    init(
+        request: any APIRequestProtocol<GenreListResource> = APIRequest(resource: GenreListResource()),
+        defaults: UserDefaults = UserDefaults.standard
+    ) {
         self.request = request
+        self.defaults = defaults
     }
     
     func fetchGenres(clearCache: Bool = false) {
@@ -46,14 +51,12 @@ class GenreListViewModel: ObservableObject {
     func saveToCache(_ genres: [Genre]) {
         let jsonEncoder = JSONEncoder()
         if let data = try? jsonEncoder.encode(genres) {
-            let defaults = UserDefaults.standard
             defaults.set(data, forKey: GENRES_KEY)
             defaults.set(Date(), forKey: DATE_KEY)
         }
     }
     
     func loadFromCache() -> [Genre]? {
-        let defaults = UserDefaults.standard
         guard let data = defaults.object(forKey: GENRES_KEY) as? Data else { return nil }
         
         let jsonDecoder = JSONDecoder()
@@ -61,10 +64,9 @@ class GenreListViewModel: ObservableObject {
     }
         
     func clearOldCacheData(deleteAll: Bool) {
-        let defaults = UserDefaults.standard
-        guard let savedDate = defaults.object(forKey: DATE_KEY) as? Date else { return }
+        let savedDate = defaults.object(forKey: DATE_KEY) as? Date
 
-        if deleteAll || DateInterval(start: savedDate, end: Date()).duration > RETENTION_TIME {
+        if deleteAll || savedDate == nil || DateInterval(start: savedDate!, end: Date()).duration > RETENTION_TIME {
             defaults.removeObject(forKey: GENRES_KEY)
             defaults.removeObject(forKey: DATE_KEY)
         }
