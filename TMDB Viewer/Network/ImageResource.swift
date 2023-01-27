@@ -16,10 +16,10 @@ enum Resolution {
 /// Resorce for fetching images
 struct ImageResource: APIResource {
     typealias ModelType = MovieList
-    var namePart: String
-    var resolution: Resolution
+    let namePart: String
+    let resolution: Resolution
 
-    var methodPath = "/t/p/"
+    let methodPath = "/t/p/"
     
     var url: URL {
         return URL(string: "\(IMAGE_TMDB_URL)\(methodPath)\(resolution)\(namePart)")!
