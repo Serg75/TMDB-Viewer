@@ -15,9 +15,7 @@
 		952A47D9297946F300A52281 /* GenreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47D8297946F300A52281 /* GenreListView.swift */; };
 		952A47DB297946F400A52281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 952A47DA297946F400A52281 /* Assets.xcassets */; };
 		952A47DE297946F400A52281 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 952A47DD297946F400A52281 /* Preview Assets.xcassets */; };
-		952A47E8297946F500A52281 /* TMDB_ViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47E7297946F500A52281 /* TMDB_ViewerTests.swift */; };
 		952A47F2297946F500A52281 /* TMDB_ViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47F1297946F500A52281 /* TMDB_ViewerUITests.swift */; };
-		952A47F4297946F500A52281 /* TMDB_ViewerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A47F3297946F500A52281 /* TMDB_ViewerUITestsLaunchTests.swift */; };
 		952A48042979481600A52281 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A48032979481600A52281 /* Genre.swift */; };
 		952A4807297949CE00A52281 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A4806297949CE00A52281 /* NetworkRequest.swift */; };
 		952A480B29794AF000A52281 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A480A29794AF000A52281 /* APIRequest.swift */; };
@@ -66,10 +64,8 @@
 		952A47DA297946F400A52281 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		952A47DD297946F400A52281 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		952A47E3297946F500A52281 /* TMDB Viewer Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB Viewer Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		952A47E7297946F500A52281 /* TMDB_ViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_ViewerTests.swift; sourceTree = "<group>"; };
 		952A47ED297946F500A52281 /* TMDB Viewer UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB Viewer UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		952A47F1297946F500A52281 /* TMDB_ViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_ViewerUITests.swift; sourceTree = "<group>"; };
-		952A47F3297946F500A52281 /* TMDB_ViewerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_ViewerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		952A48032979481600A52281 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		952A4806297949CE00A52281 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		952A480A29794AF000A52281 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -166,7 +162,6 @@
 			children = (
 				95BECE4429829F5F00A9CAED /* ViewModel */,
 				952A4815297D3C3300A52281 /* Network */,
-				952A47E7297946F500A52281 /* TMDB_ViewerTests.swift */,
 			);
 			path = "TMDB Viewer Tests";
 			sourceTree = "<group>";
@@ -175,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				952A47F1297946F500A52281 /* TMDB_ViewerUITests.swift */,
-				952A47F3297946F500A52281 /* TMDB_ViewerUITestsLaunchTests.swift */,
 			);
 			path = "TMDB Viewer UITests";
 			sourceTree = "<group>";
@@ -404,7 +398,6 @@
 			files = (
 				95BECE4629829FD400A9CAED /* GenreListViewModelTests.swift in Sources */,
 				952A4818297D54D000A52281 /* NetworkMocks.swift in Sources */,
-				952A47E8297946F500A52281 /* TMDB_ViewerTests.swift in Sources */,
 				95BECE4C2983332100A9CAED /* MovieListViewModelTests.swift in Sources */,
 				952A481A297D5D5900A52281 /* NetworkRequestTests.swift in Sources */,
 			);
@@ -415,7 +408,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				952A47F2297946F500A52281 /* TMDB_ViewerUITests.swift in Sources */,
-				952A47F4297946F500A52281 /* TMDB_ViewerUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
