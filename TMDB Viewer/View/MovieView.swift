@@ -11,12 +11,17 @@ import Kingfisher
 struct MovieView: View {
     @StateObject private var viewModel: MovieViewModel
     
-    init(viewModel: MovieViewModel) {
+    var width: Double
+    var height: Double
+    
+    init(viewModel: MovieViewModel, width: Double = 170, height: Double = 250) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.width = width
+        self.height = height
     }
     
     var body: some View {
-        HStack(spacing: 16.0) {
+        VStack(alignment: .leading) {
             KFImage(viewModel.imageURL)
                 .placeholder {
                     SwiftUI.Image("movie-placeholder")
@@ -25,12 +30,17 @@ struct MovieView: View {
                 }
                 .resizable()
                 .cancelOnDisappear(true)
-                .frame(width: 40.0, height: 40.0)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: width, height: height, alignment: .top)
                 .clipped()
+                .cornerRadius(7)
             
             Text(viewModel.title)
+                .font(.headline)
+                .lineLimit(2)
+                .frame(alignment: .top)
         }
-        .padding(.vertical, 8.0)
+        .frame(width: width)
     }
 }
 

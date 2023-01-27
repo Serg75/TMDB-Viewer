@@ -20,7 +20,7 @@ class MovieViewModel: ObservableObject, Identifiable, Hashable {
         if let movie = movie {
             self.id = movie.id
             self.title = movie.title ?? "No title"
-            self.imageURL = ImageResource(namePart: movie.imageURL ?? "", resolution: .w200).url
+            self.imageURL = ImageResource(namePart: movie.imageURL ?? "", resolution: .w500).url
         } else {
             self.id = 0
             self.title = "No title"

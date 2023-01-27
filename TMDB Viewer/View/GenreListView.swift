@@ -24,7 +24,11 @@ struct GenreListView: View {
                 .onAppear {
                     viewModel.fetchGenres()
                 }
+                
+                WelcomeView()
+                    .padding(.bottom, 50)
             }
+            
             if viewModel.genres.count == 0 {
                 HStack(spacing: 10) {
                     ProgressView()
@@ -34,6 +38,19 @@ struct GenreListView: View {
         }
     }
 }
+
+struct WelcomeView: View {
+    var body: some View {
+        VStack {
+            Text("Welcome to TMDB Viewer!")
+                .font(.largeTitle)
+
+            Text("Here you can find almost any movie (most popular on the top).")
+                .foregroundColor(.secondary)
+        }
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
